@@ -1,3 +1,5 @@
+from .pages.product_page import ProductPage
+from .pages.basket_page import BasketPage
 from .pages.login_page import LoginPage
 from .pages.main_page import MainPage
 
@@ -16,3 +18,21 @@ def test_guest_should_see_login_link(browser):
     page = MainPage(browser, link)
     page.open()
     page.should_be_login_link()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    page = MainPage(browser, link)
+    page.open()
+    page.go_to_basket()
+    page = BasketPage(browser, browser.current_url)
+    page.should_not_be_basket_items()
+    page.should_be_empty_message()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_basket()
+    page = BasketPage(browser, browser.current_url)
+    page.should_not_be_basket_items()
+    page.should_be_empty_message()
