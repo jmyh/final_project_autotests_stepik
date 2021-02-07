@@ -12,7 +12,7 @@ promo_link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-ha
 promo_link2 = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
 product_link2 = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
 
-password = "Melon1234"
+password = "P]w[eprotiy1234"
 
 
 @pytest.mark.setup
